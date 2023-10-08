@@ -1,12 +1,12 @@
 package com.university.full.auth;
 
 import com.university.full.config.JwtService;
-import com.university.full.models.Role;
-import com.university.full.models.User;
-import com.university.full.models.dto.AuthenticationRequest;
-import com.university.full.models.dto.AuthenticationResponse;
-import com.university.full.models.dto.RegisterRequest;
-import com.university.full.repositories.UserRepository;
+import com.university.full.data.entity.Role;
+import com.university.full.data.entity.UserEntity;
+import com.university.full.data.dto.auth.AuthenticationRequest;
+import com.university.full.data.dto.auth.AuthenticationResponse;
+import com.university.full.data.dto.auth.RegisterRequest;
+import com.university.full.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,9 +22,9 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
-        var user = User.builder()
-                .firstname(request.getFirstname())
-                .lastname(request.getLastname())
+        var user = UserEntity.builder()
+                .firstName(request.getFirstname())
+                .lastName(request.getLastname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.User)

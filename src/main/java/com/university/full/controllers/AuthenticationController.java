@@ -1,9 +1,9 @@
 package com.university.full.controllers;
 
 import com.university.full.auth.AuthenticationService;
-import com.university.full.models.dto.AuthenticationRequest;
-import com.university.full.models.dto.AuthenticationResponse;
-import com.university.full.models.dto.RegisterRequest;
+import com.university.full.data.dto.auth.AuthenticationRequest;
+import com.university.full.data.dto.auth.AuthenticationResponse;
+import com.university.full.data.dto.auth.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

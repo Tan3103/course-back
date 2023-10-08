@@ -1,6 +1,6 @@
 package com.university.full.config;
 
-import com.university.full.repositories.UserRepository;
+import com.university.full.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
